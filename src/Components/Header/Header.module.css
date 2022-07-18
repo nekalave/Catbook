@@ -1,0 +1,14 @@
+.header {
+    grid-area: header;
+    background-color: #211e8c;
+}
+
+.header img {
+    width: 79px;
+}
+
+.name {
+    font-size: 36px;
+    vertical-align: top;
+
+}
