@@ -3,19 +3,19 @@ import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Massage from "./Massage/Massage";
 
-const Dialogs = () => {
+const Dialogs = (props) => {
+
+    let dialogsElement = props.state.dialogs.map(d => (<DialogItem name={d.name} id={d.id}/>));
+
+    let massagesElement = props.state.massages.map(m => (<Massage massage={m.massage}/>));
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <DialogItem id='1' name="Lera"/>
-                <DialogItem id='2' name="Dima"/>
-                <DialogItem id='3' name="Nikita"/>
-                <DialogItem id='4' name="Brook"/>
+                {dialogsElement}
             </div>
             <div className={s.massages}>
-                <Massage massage="hi" />
-                <Massage massage="hihi" />
-                <Massage massage="hihihi" />
+                {massagesElement}
             </div>
         </div>
     );
